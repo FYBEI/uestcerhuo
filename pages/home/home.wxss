@@ -1,0 +1,118 @@
+/**home.wxss**/
+@import "../../iconfont.wxss";
+
+.wxSearch{
+  position: absolute;
+  top: 43px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 1px #eee solid;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.wxSearch-section{
+  background-color: #fff;
+  padding: 5px 10px;
+  border: 1px #eee solid;
+}
+.wxSearch-pancel{
+  display: flex;
+  flex-direction: row;
+}
+.wxSearch-input{
+  flex: 8; 
+  background-color: #eee;
+  padding: 5px 10px;
+}
+.wxSearch-button{
+  flex: 1;
+  border: none !important;
+  color: cornflowerblue !important;
+  background: #fff;
+}
+
+.title{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #fff;
+}
+
+.imageview{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 100rpx;
+  background: #eee;
+}
+
+.imageclass{
+  width : 630rpx;
+  height: 420rpx;
+  margin: 20rpx;
+  border:3rpx solid#e0cb0c;
+  border-radius: 25rpx;
+  box-shadow: 0rpx 6rpx 10rpx 6rpx rgb(145, 123, 105);
+}
+
+.re{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 5rpx solid rgb(83, 165, 161);
+  border-top: 5rpx solid rgb(83, 165, 161);
+  background: linear-gradient(to bottom right, rgb(230, 227, 227) , rgb(107, 247, 235));
+}
+
+.list{
+  position: relative;
+  top: 120rpx;
+}
+
+.classview{
+  display: flex;
+  direction: row;
+  align-items:center;
+  height: 400rpx;
+  border-bottom: 3rpx #2a2c2c;
+  box-shadow: 0rpx 2rpx 5rpx 3rpx #b5bbbb;
+}
+
+.classimage{
+  height: 360rpx;
+  width: 360rpx;
+  margin: 15rpx;
+  border-radius: 15rpx;
+}
+
+.intro{
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.classtext{
+  margin: 5rpx;
+  word-spacing: 20rpx;
+  width: 300rpx;
+}
+
+.name{
+  font-size: 100%;
+}
+
+.price{
+  font-size: 70%;
+}
+
+.iconclass{
+  position: absolute;
+  right: 50rpx;
+}
+

@@ -1,0 +1,12 @@
+/* pages/myself/pubedcommodity/soldCommo/soldCommo.wxss */
+@import '/iconfont.wxss';
+@import '/commoInfo.wxss';
+
+.commodityitem{
+  flex: 1;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  border-bottom: 5rpx solid rgba(11, 109, 201, 0.603);
+}

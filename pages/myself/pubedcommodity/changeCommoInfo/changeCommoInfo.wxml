@@ -1,0 +1,60 @@
+<!--pages/myself/pubedcommodity/changeCommoInfo/changeCommoInfo.wxml-->
+<view>
+  <view class='imagewall'>
+    <block wx:for="{{photonum}}">
+      <view class='iamgeview'  bindlongpress="deleteImage" data-index="{{index}}">
+          <image wx:if="{{photo[index]}}" src="{{photo[index]}}" mode="aspecFill" class='commpic'/>
+      </view>
+    </block>
+  </view>
+
+  <view class='commodityInfo'>
+    <view class='commoditypicker'>
+      <picker bindchange="classChange" value="{{classindex}}" range="{{classarr}}">
+        <view class="picker">
+          商品种类：{{classarr[classindex]}}
+        </view>
+      </picker>
+    </view>
+    <view class='commodityinput'>
+      <view>商品名称：</view>
+      <input placeholder='{{commoInfo.name}}' placeholder-class='placeclass'></input>
+    </view>
+    <view class='commodityinput'>
+      <view>磨损情况：</view>
+      <input placeholder='{{commoInfo.broke}}' placeholder-class='placeclass'></input>
+    </view>
+    <view class='commoditypicker'>
+      <picker bindchange="levelChange" value="{{levelindex}}" range="{{levelarr}}">
+        <view class="picker">
+          商品新旧程度：{{levelarr[levelindex]}} 成新
+        </view>
+      </picker>
+    </view>
+    <view class='commodityinput'>
+      <view>商品数量：</view>
+      <input placeholder='{{commoInfo.num}}' placeholder-class='placeclass'></input>
+    </view>
+    <view class='commodityinput'>
+      <view>商品价格￥：</view>
+      <input placeholder='{{commoInfo.price}}' placeholder-class='placeclass'></input>
+    </view>
+  </view>
+
+  <view class='btnview'>
+    <view class='photobutton'>
+      <span class='iconfont icon-shangchuan-copy' style="font-size: 70rpx;" bindtap="chooseimage"></span>
+    </view>
+    <view class='tbtn'>
+      <view class='obtn'>
+        <button class='btn delete'>删除</button>
+      </view>
+      <view class='obtn'>
+        <button class='btn sure'>确定</button>
+      </view>
+      <view class='obtn'>
+        <button class='btn sold'>已售</button>
+      </view>
+    </view>
+  </view>
+</view>

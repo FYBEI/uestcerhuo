@@ -1,0 +1,102 @@
+/* pages/home/commoditycontent/solderInfo/solderInfo.wxss */
+@import "../../../../iconfont.wxss";
+
+.page__bd{
+  width: 100%;
+  height: 380rpx;
+  background-image: url("http://bpic.588ku.com/back_pic/04/62/56/40586fb21cee0d0.jpg!/fh/300/quality/90/unsharp/true/compress/true");
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #333;
+}
+
+.userinfo-des{
+  color: rgba(170, 170, 170, 0.767);
+  font-size: 85%;
+}
+
+.navbar{
+  flex: none;
+  display: flex;
+  background: rgba(8, 163, 163, 0.938);
+  position: fixed;
+  top: 380rpx;
+  z-index: 10000;
+  width: 100%;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.navbar .item.active{
+  color: #FFCC00;
+}
+
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #FFCC00;
+}
+
+.mainview{
+  margin: 20rpx;
+  display: flex;
+  direction: row;
+  align-items:center;
+  height: 160rpx;
+  border: 2rpx solid #aaa;
+  border-radius: 40rpx;
+  background: #fff;
+  box-shadow: 0rpx 10rpx 10rpx 4rpx rgb(145, 123, 105);
+  position: relative;
+  top: 460rpx;
+}
+
+.commopic{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid #aaa;
+  box-shadow: 0rpx 3rpx 6rpx 4rpx rgb(145, 123, 105);
+}
+
+.textview{
+  display: flex;
+  flex-direction: column;
+}
+
+.commointroduction {
+  color: #aaa;
+  margin: 5rpx;
+}
+
+.iconclass{
+  position: absolute;
+  right: 100rpx;
+}

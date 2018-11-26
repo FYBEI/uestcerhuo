@@ -1,0 +1,63 @@
+/* pages/pubcommodity/pubcommodity2.wxss */
+@import '../../iconfont.wxss';
+
+.contain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.camera{
+  flex: 3;
+  width: 100%;
+}
+
+.imagewall{
+  flex: 2;
+  height: 230rpx;
+  width: 690rpx;
+  margin: 20rpx;
+  background: #aaa;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row; 
+}
+
+.imageview{
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.commpic{
+  width: 200rpx; 
+  height: 200rpx;
+  margin: 15rpx;
+  border-radius: 10rpx; 
+}
+
+.photobutton{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 150rpx;
+  width: 100%;
+}
+
+.photobutton2{
+  margin: 20rpx;
+  text-align: center;
+  flex: 1;
+}
+
+.photobutton3{
+  font-size: 70rpx;
+}
+
+.surebutton{
+  flex: 1;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 100%;
+}

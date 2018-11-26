@@ -1,0 +1,69 @@
+/* pages/myself/myself.wxss */
+@import "../../iconfont.wxss";
+.back{
+  background: #eee;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.mainview{
+  margin: 10rpx;
+  display: flex;
+  direction: row;
+  align-items:center;
+  height: 160rpx;
+  border: 2rpx solid #aaa;
+  border-radius: 40rpx;
+  background: #fff;
+  box-shadow: 0rpx 10rpx 10rpx 4rpx rgb(145, 123, 105);
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid #aaa;
+  box-shadow: 0rpx 3rpx 6rpx 4rpx rgb(145, 123, 105);
+}
+
+.textview{
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  margin: 5rpx;
+}
+
+.iconclass{
+  position: relative;
+  left: 200rpx;
+}
+
+.mainfunction{
+  position: relative;
+  top: 25rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 4rpx solid #aaa;
+  border-top: 4rpx solid #aaa;
+  height: 360rpx;
+  background: #fff;
+}
+
+.eachfunction{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 4rpx solid #aaa;
+  margin: 10rpx;
+  align-items:center;
+}
+
+.icon-function{
+  margin: 20rpx;
+  font-size: 30px;
+}

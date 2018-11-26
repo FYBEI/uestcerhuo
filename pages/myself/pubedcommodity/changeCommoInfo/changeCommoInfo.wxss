@@ -1,0 +1,64 @@
+/* pages/myself/pubedcommodity/changeCommoInfo/changeCommoInfo.wxss */
+@import '/commoInfo.wxss';
+
+.commodityinput{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  border-bottom: 5rpx solid rgba(11, 109, 201, 0.603);
+}
+
+.commoditypicker{
+  flex: 1;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  border-bottom: 5rpx solid rgba(11, 109, 201, 0.603);
+}
+
+.btnview{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.photobutton{
+  margin: 20rpx;
+  text-align: center;
+  flex: 1;
+}
+
+.tbtn{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.obtn{
+  flex: 1;
+  margin: 20rpx;
+}
+
+.btn{
+  margin: 20rpx;
+}
+
+.sure{
+  background-color: rgba(81, 252, 14, 0.925);
+}
+
+.delete{
+  background-color: rgba(252, 14, 14, 0.829);
+}
+
+.sold{
+  background-color: rgb(10, 217, 245);
+}

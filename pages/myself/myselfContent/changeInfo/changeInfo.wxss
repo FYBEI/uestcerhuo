@@ -1,0 +1,26 @@
+/* pages/myself/myselfContent/changeInfo/changeInfo.wxss */
+.allinput{
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  margin: 15rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.input{
+  border: 2rpx solid #aaa;
+  border-radius: 20rpx; 
+  margin: 10rpx;
+}
+
+.allbutton{
+  position: relative;
+  top: 500rpx;
+  display: flex;
+  flex-direction: row;
+}

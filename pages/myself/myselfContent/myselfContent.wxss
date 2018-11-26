@@ -1,0 +1,85 @@
+/**myself/myselfContent.wxss**/
+@import "../../../iconfont.wxss";
+
+.total{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.page__bd{
+  width: 100%;
+  height: 380rpx;
+  background-image: url("http://bpic.588ku.com/back_pic/04/62/56/40586fb21cee0d0.jpg!/fh/300/quality/90/unsharp/true/compress/true");
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #333;
+}
+
+.body{
+  position: relative;
+  top: -20rpx;
+  height: 600rpx;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  border: 3rpx solid #aaa;
+  border-radius: 10%; 
+  background-color: #fff;
+  box-shadow: 5rpx 15rpx 12rpx 6rpx rgb(145, 123, 105);
+}
+
+.item{
+  margin: 20rpx;
+  flex: 1;
+}
+
+.bb{
+  border-bottom: 2rpx solid #222;
+}
+
+.fd{
+  display: flex;
+  flex-direction: row;
+}
+
+.student{
+  margin: 20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.textclass{
+  display: flex;
+  flex-direction: column;
+}
+
+.tail{
+  position: relative;
+  top: 50rpx;
+  align-items: center;
+  width: 100%;
+}
+
+.bianji{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 400rpx;
+  background-color: rgba(12, 223, 65, 0.534);
+}

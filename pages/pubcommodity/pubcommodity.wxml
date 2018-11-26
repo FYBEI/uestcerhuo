@@ -1,0 +1,38 @@
+<view class='contain'>
+  <view class='commodityInfo'>
+    <view class='commoditypicker'>
+      <picker bindchange="classChange" value="{{classindex}}" range="{{classarr}}">
+        <view class="picker">
+          商品种类：{{classarr[classindex]}}
+        </view>
+      </picker>
+    </view>
+    <view class='commodityinput'>
+      <view>商品名称：</view>
+      <input placeholder='{{place[classindex].name}}' placeholder-class='placeclass'></input>
+    </view>
+    <view class='commodityinput'>
+      <view>磨损情况：</view>
+      <input placeholder='{{place[classindex].broke}}' placeholder-class='placeclass'></input>
+    </view>
+    <view class='commoditypicker'>
+      <picker bindchange="levelChange" value="{{levelindex}}" range="{{levelarr}}">
+        <view class="picker">
+          商品新旧程度：{{levelarr[levelindex]}} 成新
+        </view>
+      </picker>
+    </view>
+    <view class='commodityinput'>
+      <view>商品数量：</view>
+      <input placeholder='{{place[classindex].num}}' placeholder-class='placeclass'></input>
+    </view>
+    <view class='commodityinput'>
+      <view>商品价格￥：</view>
+      <input placeholder='{{place[classindex].price}}' placeholder-class='placeclass'></input>
+    </view>
+  </view>
+
+  <view class='next'>
+    <button bindtap='next' class='nextbutton'><span class='iconfont icon-bofang button' style='font-size:60px'></span></button>
+  </view>
+</view>

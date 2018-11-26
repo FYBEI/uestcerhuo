@@ -1,0 +1,32 @@
+<!--pages/myself/pubedcommodity/soldCommo/soldCommo.wxml-->
+<view>
+  <view class='imagewall'>
+    <block wx:for="{{commoInfo.photo}}">
+      <view class='iamgeview'  bindlongpress="deleteImage" data-index="{{index}}">
+          <image src="{{commoInfo.photo[index]}}" mode="aspecFill" class='commpic'/>
+      </view>
+    </block>
+  </view>
+
+  <view class='commodityInfo'>
+    <view class='commodityitem'>
+        <view>商品种类：{{commoInfo.commoclass}}</view>
+    </view>
+    <view class='commodityitem'>
+      <view>商品名称：{{commoInfo.name}}</view>
+    </view>
+    <view class='commodityitem'>
+      <view>磨损情况：{{commoInfo.broke}}</view>
+    </view>
+    <view class='commodityitem'>
+        <view>商品新旧程度：{{commoInfo.level}} 成新</view>
+    </view>
+    <view class='commodityitem'>
+      <view>商品数量：{{commoInfo.num}}</view>
+    </view>
+    <view class='commodityitem'>
+      <view>商品价格￥：{{commoInfo.price}}</view>
+    </view>
+  </view>
+
+</view>

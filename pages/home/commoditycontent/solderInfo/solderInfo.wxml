@@ -1,0 +1,41 @@
+<!--pages/home/commoditycontent/solderInfo/solderInfo.wxml-->
+<view>
+  <view class='page__bd'>
+    <image class="userinfo-avatar" src="{{solder.pic}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{solder.name}}</text>
+    <text class="userinfo-des">{{solder.description}}</text>  
+  </view>
+
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+
+  <!--待售中-->
+  <view hidden="{{currentTab!==0}}">
+    <block wx:for="{{commo1}}">
+      <view class="mainview" bindtap='enterContent'>
+        <image class="commopic" src="{{commo1[index].photo[0]}}" background-size="cover"></image>
+        <view class='textview'>
+          <text class="commointroduction">{{commo1[index].name}}</text>
+          <text class="commointroduction" style='font-size:small'>{{commo1[index].price}}</text>
+        </view>
+        <span class="iconfont icon-xiayibu iconclass"></span>  
+      </view>
+    </block>
+  </view>
+ 
+  <!--已卖出-->
+  <view hidden="{{currentTab!==1}}">
+    <block wx:for="{{commo2}}">
+      <view class="mainview" bindtap='enterContent2'>
+        <image class="commopic" src="{{commo2[index].photo[0]}}" background-size="cover"></image>
+        <view class='textview'>
+          <text class="commointroduction">{{commo2[index].name}}</text>
+          <text class="commointroduction" style='font-size:small'>{{commo2[index].price}}</text>
+        </view>
+        <span class="iconfont icon-xiayibu iconclass"></span>  
+      </view>
+    </block>
+  </view>
+</view>
+

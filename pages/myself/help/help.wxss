@@ -1,0 +1,38 @@
+/* pages/myself/help/help.wxss */
+
+.title{
+  position: fixed;
+  top: 0;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titlefont{
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.body{
+  position: relative;
+  top: 100rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 25rpx;
+  padding: 15rpx;
+  border: 8rpx inset rgba(0, 174, 255, 0.911);
+  display: flex;
+  flex-direction: column;
+}
+
+.item{
+  flex: 1;
+  border-bottom: 3rpx solid rgb(0, 255, 234); 
+  margin: 10rpx;
+}
+
+.articlefont{
+  font-family:  Georgia, serif;
+}

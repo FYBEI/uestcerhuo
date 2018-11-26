@@ -1,0 +1,22 @@
+<view class="back"> 
+  <view class="mainview" bindtap='enterContent'>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+
+    <view class='textview'>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-nickname" style='font-size:small'>点击进入个人主页</text>
+    </view>
+    <span class="iconfont icon-xiayibu iconclass"></span>  
+  </view>
+
+  <view class='mainfunction'>
+    <view class='eachfunction' bindtap='enterpubed'>
+      <span class='iconfont icon-bianji icon-function' style='color: rgba(41, 158, 255, 0.781)'></span>
+      <text class="functionname">发布的商品</text>
+    </view>
+    <view class='eachfunction' bindtap='enterhelp'>
+      <span class='iconfont icon-dianzan icon-function' style='color: rgba(255, 41, 59, 0.603)'></span>
+      <text class="functionname">帮助</text>
+    </view>
+  </view>
+</view>

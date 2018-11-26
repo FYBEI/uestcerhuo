@@ -1,0 +1,11 @@
+<!--pages/myself/help/help.wxml-->
+<view>
+  <view class='title'>
+    <text class='titlefont'>成电二货使用说明</text>
+  </view>
+  <view class='body'>
+    <view wx:for="help" class='item'>
+      <text class='articlefont'>{{index+1}}、{{help[index]}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/home/list/list.wxml-->
+<view>
+  <view class="wxSearch-section" style='position:fixed;top:0;width:100%;z-index:1000'>
+    <view class="wxSearch-pancel">
+        <input bindinput="searchInput" class="wxSearch-input" placeholder="搜索宝贝" />
+        <button class="wxSearch-button" bindtap="searchFn" size="mini" plain="true">搜索</button>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view wx:for="{{commodities}}" wx:for-item="commodity" bindtap='enterContent'>
+      <view class="classview">
+        <image src='{{commodity.photo}}' class='classimage' mode='scaleToFill'></image>
+        <view class='intro'>
+          <text class='classtext name'>{{commodity.name}}</text>
+          <text class='classtext price'>{{commodity.price}}</text>
+        </view>
+        <span class='iconfont icon-xiayibu iconclass'></span>
+      </view>  
+    </view>
+  </view>
+</view>

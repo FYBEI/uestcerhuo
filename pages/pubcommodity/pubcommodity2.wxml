@@ -1,0 +1,26 @@
+<view class='contain'>
+  <view class='camera'>
+    <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+  </view>
+
+  <view class='imagewall'>
+    <block wx:for="{{tempFilenum}}">
+      <view class='iamgeview'  bindlongpress="deleteImage" data-index="{{index}}">
+          <image wx:if="{{tempFilePaths[index]}}" src="{{tempFilePaths[index]}}" mode="aspecFill" class='commpic'/>
+      </view>
+    </block>
+  </view>
+
+  <view class='photobutton'>
+    <view class='photobutton2'>
+       <span class='iconfont icon-shangchuan-copy photobutton3' bindtap="chooseimage"></span>
+    </view>
+    <view class='photobutton2'>
+      <button class='surebutton'>确定</button>
+    </view>
+    <view class='photobutton2'>
+      <span class='iconfont icon-paizhao photobutton3' bindtap='takePhoto'></span>
+    </view> 
+  </view>
+
+</view>

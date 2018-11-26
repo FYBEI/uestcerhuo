@@ -1,0 +1,198 @@
+/* commoditycontent.wxss */
+@import "iconfont.wxss";
+
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+
+.swiper-image {
+  height: 100%;
+  width: 100%;
+}
+
+.title{
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #444; 
+}
+
+.iconview{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconclass{
+  font-size: 150%;
+  margin: 15rpx;
+}
+
+.npn{
+  flex: 2;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.name{
+  flex: 3;
+  margin: 10rpx;
+  display: flex; 
+  align-items: center;
+}
+
+.pn{
+  flex: 2;
+  margin: 5rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.pntext{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center; 
+}
+
+.ptext{
+  font-size: 100%; 
+  color: rgba(255, 8, 0, 0.808);
+}
+
+.ntext{
+  font-size: 80%;
+}
+
+.owner{
+  position: relative;
+  top: 10rpx;
+  height: 300rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #444; 
+  border-top: 1rpx solid #444; 
+}
+
+.ownerInfo{
+  flex: 5;
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx;
+  border-bottom: 3rpx solid #aaa;
+  align-items: center;
+}
+
+.detail{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.head{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  border: 1rpx solid #aaa;
+  box-shadow: 0rpx 3rpx 6rpx 4rpx rgb(145, 123, 105);
+  margin-left: 10rpx; 
+}
+
+.Infoview{
+  position: relative;
+  left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx;
+}
+
+.ownername{
+  flex: 3;
+  display: flex;
+  align-items: center;
+  margin: 10rpx;
+}
+
+.description{
+  flex: 2;
+  display: flex;
+  align-items: center;
+  margin: 3rpx;
+  font-size: 80%;
+  color: #aaa;
+}
+
+.ownerCommo{
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+}
+
+.psview{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+}
+
+.pstext{
+  flex: 1;
+  margin: 5rpx;
+  display: flex;
+  align-items: center;
+}
+
+.commodetail{
+  position: relative;
+  top: 20rpx;
+  width: 100%;
+  border-top: 2rpx solid #444;
+  border-bottom: 2rpx solid #444;
+  display: flex;
+  flex-direction: column;
+}
+
+.dtitle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx;
+}
+
+.brokeview{
+  display: flex;
+  flex-direction: column; 
+  margin: 15rpx;
+  padding: 15rpx;
+  border-bottom: 2rpx solid #aaa;
+}
+
+.btnview{
+  height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgb(133, 247, 255);
+  border-top: 2rpx solid #aaa; 
+}
+
+.btn{
+  margin: 10rpx;
+  height: 80rpx;
+  width: 180rpx;
+  position: absolute;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(226, 36, 3, 0.61);
+  font-size: 75%;
+  color: white;
+}

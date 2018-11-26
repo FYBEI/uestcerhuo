@@ -1,0 +1,116 @@
+/* pages/myself/pubedcommodity/pubedcommodity.wxss */
+@import "../../../iconfont.wxss";
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.navbar{
+  flex: none;
+  display: flex;
+  background: rgba(8, 163, 163, 0.938);
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.navbar .item.active{
+  color: #FFCC00;
+}
+
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #FFCC00;
+}
+
+.mainview{
+  margin: 20rpx;
+  display: flex;
+  direction: row;
+  align-items:center;
+  height: 220rpx;
+  border: 2rpx solid #aaa;
+  border-radius: 40rpx;
+  background: #fff;
+  box-shadow: 0rpx 10rpx 10rpx 4rpx rgb(145, 123, 105);
+  position: relative;
+  top: 80rpx;
+}
+
+.commopic{
+  width: 162rpx;
+  height: 162rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid #aaa;
+  box-shadow: 0rpx 3rpx 6rpx 4rpx rgb(145, 123, 105);
+}
+
+.textview{
+  display: flex;
+  flex-direction: column;
+}
+
+.commointroduction {
+  color: #aaa;
+  margin: 5rpx;
+}
+
+.iconclass{
+  flex: 1;
+  width: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconclass2{
+  position:absolute;
+  right: 50rpx;
+}
+
+.next{
+  position: absolute;
+  right: 10rpx;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nextbtn{
+  flex: 1;
+  display: flex;
+  flex-direction: row; 
+}
+
+.btn{
+  flex: 1;
+  margin: 10rpx;
+  height: 80rpx;
+  width: 140rpx;
+  font-size: 80%;
+  text-align: center;
+}
+
+.delete{
+  background-color: rgba(255, 0, 0, 0.671);
+}
+
+.sold{
+  background-color: rgba(90, 202, 15, 0.774);
+}

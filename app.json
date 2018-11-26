@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/home/list/list",
+    "pages/classify/classify",
+    "pages/classify/classifylist/classifylist",
+    "pages/myself/myself",
+    "pages/myself/myselfContent/myselfContent",
+    "pages/myself/myselfContent/changeInfo/changeInfo",
+    "pages/myself/pubedcommodity/pubedcommodity",
+    "pages/myself/pubedcommodity/changeCommoInfo/changeCommoInfo",
+    "pages/myself/pubedcommodity/soldCommo/soldCommo",
+    "pages/myself/help/help",
+    "pages/pubcommodity/pubcommodity",
+    "pages/pubcommodity/pubcommodity2",
+    "pages/home/shouldknow/shouldknow",
+    "pages/home/commoditycontent/commoditycontent",
+    "pages/home/commoditycontent2/commoditycontent2",
+    "pages/home/commoditycontent/solderInfo/solderInfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "成电二货",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/home.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/classfy.png",
+        "iconPath": "images/classfy.png",
+        "pagePath": "pages/classify/classify",
+        "text": "分类"
+      },
+      {
+        "selectedIconPath": "images/pub.png",
+        "iconPath": "images/pub.png",
+        "pagePath": "pages/pubcommodity/pubcommodity",
+        "text": "发布"
+      },
+      {
+        "selectedIconPath": "images/me.png",
+        "iconPath": "images/me.png",
+        "pagePath": "pages/myself/myself",
+        "text": "我"
+      }
+    ]
+  }
+}

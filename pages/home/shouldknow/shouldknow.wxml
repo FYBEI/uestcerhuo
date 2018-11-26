@@ -1,0 +1,13 @@
+<!--shouldknow-->
+<view class='back'>
+  <image src='/images/home/homepicture.jpg' class='imageclass'></image>
+  
+  <view wx:for="{{contents}}" wx:for-item="content">
+    <view class='contentview'>
+      <text class='contenttile'>{{index + 1}}.{{content.title}}</text>
+      <text class='contenttext'>{{content.text}}</text>
+      <image src='{{content.picture}}' class='contentimage' mode='widthFix'></image>
+      <view style='height:60rpx'></view>
+    </view>
+  </view> 
+</view>

@@ -1,0 +1,47 @@
+<view class='total'>
+  <view class='page__bd'>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text> 
+  </view>
+
+  <view class='body'>
+    <view class='item bb'>
+      <span class='iconfont icon-shenfenxinxi' style='margin:10rpx;color: rgba(255, 0, 0, 0.644);'></span>
+      <text>个性签名：</text>
+      <text>{{description}}</text>
+    </view>
+    <view class='item fd bb'>
+      <span class='iconfont icon-ziyuanjk' style='margin:10rpx;color: rgba(255, 174, 0, 0.644);'></span>
+      <text>性别：</text>
+      <block wx:if="{{userInfo.gender === 1}}">男</block>
+      <block wx:elif="{userInfo.gender === 2}">女</block>
+    </view>
+    <view class='item fd bb'>
+      <span class='iconfont icon-address' style='margin:10rpx;color: rgb(255, 251, 0);'></span>
+      <text>地址：</text>
+      <view>{{userInfo.country}}</view>
+      <view>{{userInfo.province}}</view>
+    </view>
+    <view class='item fd bb'>
+      <span class='iconfont icon-weixin' style='margin:10rpx;color: rgba(0, 225, 255, 0.644);'></span>
+      <text>微信号：{{weinum}}</text>
+    </view>
+    <view class='item fd'>
+      <span class='iconfont icon-boshihoujibenxinxi' style='margin:10rpx;color: rgba(0, 26, 255, 0.644);'></span>
+      <view class='textclass'>
+        <view>
+          <text>学号：</text>
+          <text>{{studentnum}}</text>
+        </view>
+        <view>
+          <text>学院：</text>
+          <text>{{college}}</text>
+        </view> 
+      </view> 
+    </view>
+  </view>
+
+  <view class='tail'>
+    <button class='bianji' bindtap='bianji'>点击编辑</button>
+  </view>
+</view>

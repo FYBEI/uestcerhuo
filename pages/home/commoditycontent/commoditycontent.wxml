@@ -1,0 +1,71 @@
+<!--pages/home/commoditycontent/commoditycontent-->
+<view>
+  <view>
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
+      <block wx:for="{{movies}}" wx:for-index="index">  
+        <swiper-item>  
+          <image src="{{item.url}}" class="swiper-image" mode="aspectFill"/>  
+        </swiper-item>  
+      </block>  
+    </swiper>
+  </view>
+  
+  <view>
+    <view class='title'>
+      <view class='npn'>
+        <text class='name'>{{commodity.name}}</text>
+        <view class='pn'>
+          <text class='pntext ptext'>￥{{commodity.price}}</text>
+          <text class='pntext ntext'>数量：{{commodity.num}}</text>
+        </view>
+      </view>
+      <view class='iconview'>
+        <span class='iconfont icon-dianzan iconclass'></span>
+      </view>  
+    </view>
+
+    <view class='owner' bindtap='checksolderInfo'>
+      <view class='ownerInfo'>
+        <view class='detail'>
+          <image class='head' src='{{owner.pic}}'></image>
+          <view class='Infoview'>
+            <text class='ownername'>{{owner.name}}</text>
+            <text class='description'>简介：{{owner.description}}</text>
+            <text class='description'>微信号：{{owner.weinum}}</text>
+          </view>
+        </view>
+        <view class='iconview'>
+          <span class='iconfont icon-xiayibu iconclass'></span>
+        </view>  
+      </view>
+      <view class='ownerCommo'>
+        <view class='psview'>
+          <text class='pstext'>{{owner.pubed}}</text>
+          <text class='pstext'>在售宝贝</text>
+        </view>
+        <view class='psview'>
+          <text class='pstext'>{{owner.sold}}</text>
+          <text class='pstext'>已售宝贝</text>
+        </view>
+      </view>
+    </view>
+    <view class='commodetail'>
+      <view class='dtitle'>
+        <text>商品详细</text>
+      </view>
+      <view class='brokeview'>
+        <text class='broke'>磨损情况：</text>
+        <text class='broke' decode="true">&nbsp;&nbsp;&nbsp;&nbsp;{{commodity.broke}}</text>
+      </view>
+      <view style='margin:15rpx;padding:15rpx;'>
+        <text class='level'>新旧程度：{{commodity.level}}成新</text>
+      </view>
+    </view>
+  </view>
+
+  <view style='height:120rpx'></view>
+
+  <view class='btnview'>
+    <button class='btn' bindtap='revbtn'>联系卖家</button>
+  </view>
+</view>

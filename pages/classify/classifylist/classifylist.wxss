@@ -1,0 +1,21 @@
+/* pages/classify/classifylist/classifylist.wxss */
+@import "/list.wxss";
+
+.title{
+  position: fixed;
+  height: 85rpx;
+  width: 100%;
+  top: 100rpx;
+  text-align: center;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  background: rgb(0, 140, 255);
+  z-index: 10000;
+  border-bottom: 3rpx solid rgba(0, 0, 255, 0.719);
+}
+
+.list{
+  position: relative;
+  top: 200rpx;
+}

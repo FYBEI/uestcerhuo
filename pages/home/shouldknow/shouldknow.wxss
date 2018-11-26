@@ -1,0 +1,40 @@
+/**shouldknow.wxss**/
+.back{
+  background:rgb(209, 255, 250);
+}
+
+.imageclass{
+  width: 100%;
+  height: 250rpx;
+  border:3rpx dotted #e0cb0c;
+  border-bottom-left-radius: 175rpx;
+  border-bottom-right-radius: 175rpx;
+  box-shadow: 0rpx 0rpx 20rpx 6rpx rgb(179, 83, 5);
+}
+
+.contentview{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: 50rpx;
+}
+
+.contenttile{
+  font-weight: bold;
+  font-size: 45rpx; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10rpx;
+}
+
+.contenttext{
+  font-size: 32rpx;
+  padding: 10rpx;
+}
+
+.contentimage{
+  padding: 20rpx;
+  width: 70%;
+  filter: drop-shadow(15rpx 15rpx 10rpx #757777);
+}

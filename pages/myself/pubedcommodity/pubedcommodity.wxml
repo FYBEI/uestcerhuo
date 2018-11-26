@@ -1,0 +1,40 @@
+<view>
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+ 
+  <!--已发布-->
+  <view hidden="{{currentTab!==0}}">
+    <block>
+      <view wx:for="{{commo1}}" class="mainview" data-index='{{index}}'>
+        <image class="commopic" src="{{commo1[index].photo[0]}}" background-size="cover"></image>
+        <view class='textview'>
+          <text class="commointroduction">{{commo1[index].name}}</text>
+          <text class="commointroduction" style='font-size:small'>{{commo1[index].price}}</text>
+        </view>
+        <view class='next'>
+          <span class="iconfont icon-xiayibu iconclass" data-index='{{index}}' bindtap='enterContent'></span>
+          <view class='nextbtn'>
+            <button class='btn delete' bindtap='deleteCommo'>删除</button>
+            <button class='btn sold' bindtap='soldCommo'>已售</button>
+          </view>
+        </view>  
+      </view>
+    </block>
+  </view>
+ 
+  <!--已出售-->
+  <view hidden="{{currentTab!==1}}">
+    <block wx:for="{{commo2}}">
+      <view class="mainview" bindtap='enterContent2' data-index='{{index}}'>
+        <image class="commopic" src="{{commo2[index].photo[0]}}" background-size="cover"></image>
+        <view class='textview'>
+          <text class="commointroduction">{{commo2[index].name}}</text>
+          <text class="commointroduction" style='font-size:small'>{{commo2[index].price}}</text>
+        </view>
+        <span class="iconfont icon-xiayibu iconclass2"></span>  
+      </view>
+    </block>
+  </view>
+
+</view>

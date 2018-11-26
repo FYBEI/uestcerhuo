@@ -1,0 +1,32 @@
+/* commoInfo.wxss */
+@import 'iconfont.wxss';
+
+.imagewall{
+  flex: 2;
+  height: 240rpx;
+  margin: 20rpx;
+  background: #aaa;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row; 
+}
+
+.imageview{
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.commpic{
+  width: 220rpx; 
+  height: 220rpx;
+  margin: 10rpx;
+  border-radius: 10rpx; 
+}
+
+.commodityInfo{
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+  margin: 20rpx;
+  border: 10rpx groove rgb(0, 100, 250);
+}

@@ -1,0 +1,20 @@
+<view>
+  <view class="wxSearch-section" style='position:fixed;top:0;width:100%;z-index:1000'>
+    <view class="wxSearch-pancel">
+        <input bindinput="searchInput" class="wxSearch-input" placeholder="搜索宝贝" />
+        <button class="wxSearch-button" bindtap="searchFn" size="mini" plain="true">搜索</button>
+    </view>
+  </view>
+
+  <view style='height:100rpx;'></view>
+
+  <view>
+    <view wx:for="{{classification}}" wx:for-item="class" bindtap='enterlist' data-index="{{index}}">
+      <view class="classview">
+        <image src='{{class.pic}}' class='classimage' mode='scaleToFill'></image>
+        <text class='classtext'>{{class.name}}</text>
+        <span class='iconfont icon-xiayibu iconclass'></span>
+      </view>  
+    </view>
+  </view>
+</view>

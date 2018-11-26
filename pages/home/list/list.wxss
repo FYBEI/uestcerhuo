@@ -1,0 +1,7 @@
+/* pages/home/list/list.wxss */
+@import "/list.wxss";
+
+.list{
+  position: relative;
+  top: 120rpx;
+}
