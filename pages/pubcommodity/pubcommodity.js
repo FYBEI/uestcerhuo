@@ -22,6 +22,7 @@ Page({
     specialbroke: '磨损情况',
     level: '',
     num: 1,
+    oprice: 0,
     price: 0
   },
 
@@ -98,6 +99,65 @@ Page({
     })
     this.data.level = this.data.levelarr[this.data.levelindex]
   },
+
+  entername: function(e){
+    var name = e.detail.value
+    this.setData({
+      name: name
+    })
+  },
+
+  enterbroke: function(e){
+    var broke = e.detail.value
+    this.setData({
+      broke: broke
+    })
+  },
+
+  enternum: function(e){
+    var num = e.detail.value
+    this.setData({
+      num: num
+    })
+  },
+
+  enteroprice:  function(e){
+    var oprice = e.detail.value
+    this.setData({
+      oprice: oprice
+    })
+
+    //商品估值
+    var level = this.data.level
+    var clas = this.data.classify
+    this.setData({
+      price: this.value(clas, level, oprice)
+    })
+  },
+
+  value: function(clas, level, oprice){
+    switch(level)
+    {
+      case '九': oprice *= 0.5; break;
+      case '八': oprice *= 0.45; break;
+      case '七': oprice *= 0.4; break;
+      case '六': oprice *= 0.35; break;
+      case '五': oprice *= 0.3; break;
+      case '四': oprice *= 0.25; break;
+      case '三': oprice *= 0.2;break;
+      case '二': oprice *= 0.15; break;
+      case '一': oprice *= 0.1; break;
+    }
+
+    return oprice;
+  },
+
+  enterprice: function(e){{
+    var price = e.detail.value
+    this.setData({
+      price: price    
+    })
+  }},
 
   next: function(){
       wx.navigateTo({

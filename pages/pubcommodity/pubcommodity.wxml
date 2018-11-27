@@ -9,11 +9,11 @@
     </view>
     <view class='commodityinput'>
       <view>商品名称：</view>
-      <input placeholder='{{place[classindex].name}}' placeholder-class='placeclass'></input>
+      <input placeholder='{{place[classindex].name}}' placeholder-class='placeclass' bindinput='entername'></input>
     </view>
     <view class='commodityinput'>
       <view>磨损情况：</view>
-      <input placeholder='{{place[classindex].broke}}' placeholder-class='placeclass'></input>
+      <input placeholder='{{place[classindex].broke}}' placeholder-class='placeclass' bindinput='enterbroke'></input>
     </view>
     <view class='commoditypicker'>
       <picker bindchange="levelChange" value="{{levelindex}}" range="{{levelarr}}">
@@ -24,15 +24,19 @@
     </view>
     <view class='commodityinput'>
       <view>商品数量：</view>
-      <input placeholder='{{place[classindex].num}}' placeholder-class='placeclass'></input>
+      <input placeholder='{{place[classindex].num}}' placeholder-class='placeclass' bindinput='enternum'></input>
+    </view>
+    <view class='commodityinput'>
+      <view>商品原价￥：</view>
+      <input placeholder='{{place[classindex].price}}' placeholder-class='placeclass' bindinput='enteroprice'></input>
     </view>
     <view class='commodityinput'>
       <view>商品价格￥：</view>
-      <input placeholder='{{place[classindex].price}}' placeholder-class='placeclass'></input>
+      <input placeholder='推荐价格:{{price}}' placeholder-class='placeclass' bindinput='enterprice'></input>
     </view>
   </view>
 
   <view class='next'>
-    <button bindtap='next' class='nextbutton'><span class='iconfont icon-bofang button' style='font-size:60px'></span></button>
+    <button bindtap='next' class='nextbutton'><span class='iconfont icon-bofang' style='font-size:60rpx'></span></button>
   </view>
 </view>
