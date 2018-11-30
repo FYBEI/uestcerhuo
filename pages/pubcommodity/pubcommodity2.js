@@ -4,6 +4,11 @@ Page({
   data: {
     tempFilePaths: [],
     tempFilenum: 0,
+    maxNum: 3
+  },
+
+  onLoad: function(options){
+    
   },
 
   //打开相册，上传图片
@@ -19,18 +24,26 @@ Page({
           tempFilePaths: res.tempFilePaths,
           tempFilenum: res.tempFilePaths.length
         })
-        console.log(res)
+        console.log(_this.data.tempFilePaths)
       }
     })
   },
 
   takePhoto() {
-    const ctx = wx.createCameraContext()
+    this.ctx = wx.createCameraContext()
     ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        this.data.tempFilePaths.push(res.tempImagePath),
-        this.data.tempFilenum = this.data.tempFilePaths.length
+        if (this.data.tempFilenum < this.data.maxNum)
+        { 
+          this.data.tempFilePaths.push(res.tempImagePath),
+          this.data.tempFilenum = this.data.tempFilePaths.length
+        }else
+        {
+          this.data.tempFilePaths[0] = res.tempImagePath
+        }
+        console.log(this.data.tempFilePaths)
+        console.log(this.data.tempFilenum)
       }
     })
   },

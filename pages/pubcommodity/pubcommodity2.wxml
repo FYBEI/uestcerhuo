@@ -4,7 +4,7 @@
   </view>
 
   <view class='imagewall'>
-    <block wx:for="{{tempFilenum}}">
+    <block wx:for="{{maxNum}}">
       <view class='iamgeview'  bindlongpress="deleteImage" data-index="{{index}}">
           <image wx:if="{{tempFilePaths[index]}}" src="{{tempFilePaths[index]}}" mode="aspecFill" class='commpic'/>
       </view>
