@@ -4,7 +4,8 @@ Page({
   data: {
     tempFilePaths: [],
     tempFilenum: 0,
-    maxNum: 3
+    maxNum: 3,
+    des: ["1，一次可以上传1~3张图片。", "2，长按可以删除图片。", "3，图片尽量清晰明亮。", "4，图片应当符合描述", "发布后请耐心等待审核"],
   },
 
   onLoad: function(options){
@@ -25,25 +26,6 @@ Page({
           tempFilenum: res.tempFilePaths.length
         })
         console.log(_this.data.tempFilePaths)
-      }
-    })
-  },
-
-  takePhoto() {
-    this.ctx = wx.createCameraContext()
-    ctx.takePhoto({
-      quality: 'high',
-      success: (res) => {
-        if (this.data.tempFilenum < this.data.maxNum)
-        { 
-          this.data.tempFilePaths.push(res.tempImagePath),
-          this.data.tempFilenum = this.data.tempFilePaths.length
-        }else
-        {
-          this.data.tempFilePaths[0] = res.tempImagePath
-        }
-        console.log(this.data.tempFilePaths)
-        console.log(this.data.tempFilenum)
       }
     })
   },
@@ -72,6 +54,20 @@ Page({
         });
       }
     })
+  },
+
+  pubCommo: function(){
+    if(this.data.tempFilenum == 0){
+      wx.showToast({
+        title: '请添加图片',
+      })
+    }else{
+      this.pub();
+    }
+  },
+
+  pub: function(){
+    console.log("上传商品数据")
   }
   
 })
