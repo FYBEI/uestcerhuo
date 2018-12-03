@@ -1,4 +1,6 @@
 // pages/home/commoditycontent2/commoditycontent2.js
+var app = getApp();
+
 Page({
 
   /**
@@ -16,11 +18,34 @@ Page({
     index: 0
   },
 
+  getCommo: function (commoId) {
+    wx.request({
+      url: '',
+      data: {
+        commoId: commoId
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        console.log(res.data),
+          this.setData({
+            commodity: res.data.commodity
+          })
+      },
+      fail: function (res) {
+        console.log("失败了")
+      },
+      complete: function (res) { }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var commoId = options.commoId
+    this.getCommo(commoId)
   },
 
   /**

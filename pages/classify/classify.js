@@ -71,6 +71,7 @@ Page({
   
   },
 
+  //进入分类列表页
   enterlist: function(e) {
     var index = e.currentTarget.dataset.index
     var name = this.data.classification[index].name
@@ -87,7 +88,11 @@ Page({
     console.log(this.data.search)
   },
 
+  //搜索框
   searchFn: function () {
     var search = this.data.search
+    wx.navigateTo({
+      url: '/pages/home/list/list?search=' + search,
+    })
   } 
 })

@@ -13,9 +13,10 @@ Page({
     index: 0,
   },
   
-  getCommo: function (url, commoId) {
+  //获得商品详细信息
+  getCommo: function (commoId) {
     wx.request({
-      url: url,
+      url: '',
       data: {
         commoId: commoId
       },
@@ -35,27 +36,27 @@ Page({
     })
   },
 
+  //获得前一个页面传来的商品id，并且请求商品详细信息
   onLoad: function (options) {
     var commoId = options.commoId
     var url = app.globalData.serurl
     this.getCommo(url, commoId)
   },
 
-  revbtn: function() {
-
-  },
-
   onShow: function(){
     
   },
 
+  //向商家信息页面传输商家Id
   checksolderInfo: function(){
-    var solder = JSON.stringify(this.data.owner)
+    var solderId = this.data.owner.solderId
+    
     wx.navigateTo({
-      url: `solderInfo/solderInfo?solder=${solder}`,
+      url: 'solderInfo/solderInfo?solderId='+solderId,
     })
   },
 
+  //复制商家的微信号
   revbtn: function(){
     var weinum = this.data.owner.weinum
     wx.showModal({

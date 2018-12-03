@@ -17,13 +17,38 @@ Page({
     search: '',
   },
 
+  getClassList: function(name){
+    
+    wx.request({
+      url: '',
+      data: {
+        name: name  
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        console.log(res.data),
+          this.setData({
+            commodities: res.data.commos
+          })
+      },
+      fail: function (res) {
+        console.log("失败了")
+      },
+      complete: function (res) { }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var name = options.name
     this.setData({
-      name: options.name
+      name: name
     })
+    this.getClassList(name);
   },
 
   /**

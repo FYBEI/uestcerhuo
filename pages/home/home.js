@@ -6,6 +6,7 @@ Page({
     search: '',
   },
 
+  //获取推荐商品列表
   getCommos: function(url){
     wx.request({
       url: url,
@@ -30,12 +31,14 @@ Page({
     this.getCommos(url)
   },
 
+  //进入用户须知页面
   goshouldknow: function(){
     wx.navigateTo({
       url: '../home/shouldknow/shouldknow',
     })
   },
 
+  //进入商品详细页面，传输商品id
   enterContent: function(e){
     var index = e.currentTarget.dataset.index
     var commoId = this.data.commodities[index].id
@@ -53,6 +56,7 @@ Page({
     console.log(this.data.search)
   },
 
+  //搜索框
   searchFn: function(){
     var search = this.data.search
     wx.navigateTo({

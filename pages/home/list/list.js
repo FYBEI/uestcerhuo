@@ -19,6 +19,7 @@ Page({
     search: '',
   },
 
+  //请求相关商品列表
   getCommos: function (url, search) {
     wx.request({
       url: url,
@@ -44,9 +45,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  //接受前一个页面传输来的关键字，请求相关商品列表
   onLoad: function (options) {
     var search = options.search
-    console.log("关键字"+search)
+    console.log("关键字:"+search)
     var url = app.globalData.serurl
     this.getCommos(url, search)
   },
@@ -100,9 +102,12 @@ Page({
 
   },
 
+  //向商品详细页面传输商品id
   enterContent: function (e) {
+    var index = e.currentTarget.dataset.index
+    var commoId = this.data.commodities[index].id
     wx.navigateTo({
-      url: '../commoditycontent/commoditycontent'
+      url: '../commoditycontent/commoditycontent?commoId' + commoId,
     })
   },
 
@@ -114,6 +119,7 @@ Page({
     console.log(this.data.search)
   },
 
+  //搜索框
   searchFn: function () {
     var search = this.data.search
     wx.navigateTo({

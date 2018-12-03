@@ -8,7 +8,7 @@
   </view>
 
   <view class='list'>
-    <view wx:for="{{commodities}}" wx:for-item="commodity" bindtap='enterContent'>
+    <view wx:for="{{commodities}}" wx:for-item="commodity" data-index='{{index}}' bindtap='enterContent'>
       <view class="classview">
         <image src='{{commodity.photo}}' class='classimage' mode='scaleToFill'></image>
         <view class='intro'>
