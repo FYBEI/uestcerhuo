@@ -98,21 +98,35 @@ Page({
 
 
   sure: function(){
-    let pages = getCurrentPages();//当前页面
-    let prevPage = pages[pages.length - 2];//上一页面
-    prevPage.setData({//直接给上移页面赋值
-      studentnum: this.data.studentnum,
-      college: this.data.college,
-      description: this.data.description,
-      weinum: this.data.weinum
-    });
-    wx.navigateBack({
-      url: '../myselfContent',
+    wx.request({
+      url: '',
+      data: {
+        description: this.data.description,
+        studentnum: this.data.studentnum,
+        college: this.data.college,
+        weinum: this.data.weinum
+      },
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        console.log(res.data)
+        wx.navigateTo({
+          url: '../myselfContent',
+        })
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '修改失败',
+        })
+      },
+      complete: function (res) { }
     })
+    
   },
 
   cancel: function(){
-    wx.navigateBack({
+    wx.navigateTo({
       url: '../myselfContent',
     })
   }

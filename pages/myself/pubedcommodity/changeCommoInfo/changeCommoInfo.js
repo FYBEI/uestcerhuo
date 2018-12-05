@@ -20,17 +20,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var commoInfo = JSON.parse(options.commoInfo)
+    var commoId = options.Id
+    this.getCommoInfo(commoId)
+    var commoInfo = this.data.commoInfo
     var levelindex = this.data.levelarr.indexOf(commoInfo.level)
     var classindex = this.data.classarr.indexOf(commoInfo.commoclass)
     this.setData({
-      commoInfo: commoInfo,
-      photo: commoInfo.photo,
-      photonum: commoInfo.photo.length,
       levelindex: levelindex,
       classindex: classindex
     })
-    console.log(this.data.commoInfo)
+  },
+
+  getCommoInfo: function(commoId){
+    wx.request({
+      url: '',
+      data: {
+        commoId: commoId
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        this.setData({
+          commoInfo: res.data.commoInfo
+        })
+      },
+      fail: function (res) {
+        console.log("fail")
+      },
+      complete: function (res) { }
+    })
   },
 
   /**
@@ -142,4 +161,153 @@ Page({
       }
     })
   },
+
+  //删除商品
+  deleteCommo: function(e){
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此商品吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          wx.request({
+            url: '',
+            data: {
+              commoId: this.data.commoInfo.commoId
+            },
+            method: 'POST',
+            dataType: 'json',
+            responseType: 'text',
+            success: (res) => {
+             
+                wx.showToast({
+                  title: '删除成功',
+                })
+            
+            },
+            fail: function (res) {
+              wx.showToast({
+                title: '删除失败',
+              })
+            },
+            complete: function (res) { }
+          })
+
+
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+
+      }
+    })
+  },
+
+  //确定修改信息
+  sureChange: function(e){
+    wx.showModal({
+      title: '提示',
+      content: '确定要修改此商品信息吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          if(this.upCommoInfo() & this.upImage())
+            wx.showToast({
+              title: '修改成功',
+              success:function(res){
+                wx.navigateTo({
+                  url: '../pubedcommodity',
+                })
+              }
+            })
+          else{
+            wx.showToast({
+              title: '修改失败',
+              icon: 'cancel',
+            })
+          }
+
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+
+      }
+    })
+  },
+
+  upCommoInfo:function(){
+    wx.request({
+      url: '',
+      data: {
+        commoInfo: this.data.commoInfo
+      },
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        return true
+      },
+      fail: function (res) {
+        return false
+      },
+      complete: function (res) { }
+    })
+  },
+
+  upImage: function(){
+    var num = this.data.photonum
+    for(var i = 0; i < num; i++){
+      wx.uploadFile({
+        url: '',
+        filePath: this.data.photo[i],
+        name: this.data.commoId + 'photo' + i,
+        fail:function(res){
+          return false
+        }
+      })
+    }
+    return true
+  },
+
+  //商品已售
+  soldCommo: function(e){
+    wx.showModal({
+      title: '提示',
+      content: '确定要此商品已卖出吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          wx.request({
+            url: '',
+            data: {
+              commoId: this.data.commoInfo.commoId
+            },
+            method: 'POST',
+            dataType: 'json',
+            responseType: 'text',
+            success: (res) => {
+            
+                wx.showToast({
+                  title: '修改成功',
+                })
+           
+            },
+            fail: function (res) {
+              wx.showToast({
+                title: '修改失败',
+              })
+            },
+            complete: function (res) { }
+          })
+
+
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+
+      }
+    })
+  }
 })

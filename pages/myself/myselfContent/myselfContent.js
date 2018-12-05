@@ -9,10 +9,29 @@ Page({
   },
 
   onLoad: function(options){
-    var userInfo = JSON.parse(options.userInfo)
-    this.setData({
-      userInfo: userInfo
+    wx.getStorage({
+      key: 'openid',
+      success: function(res) {
+        console.log(res.data)
+        wx.request({
+          url: '',
+          method: 'GET',
+          dataType: 'json',
+          responseType: 'text',
+          success: (res) => {
+            console.log(res.data)
+            this.setData({
+              userInfo: res.data.userInfo
+            })
+          },
+          fail: function (res) {
+            console.log("失败了")
+          },
+          complete: function (res) { }
+        })
+      },
     })
+    
   },
 
   onShow: function(options){
@@ -20,7 +39,7 @@ Page({
   },
 
   bianji: function(e){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../myselfContent/changeInfo/changeInfo?description='+this.data.description+'&studentnum='+this.data.studentnum+'&college='+this.data.college,
     })
   }

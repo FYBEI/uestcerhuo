@@ -8,11 +8,14 @@
 .item{
   display: flex;
   flex-direction: row;
-  margin: 15rpx;
+  margin: 10rpx;
+  padding: 20rpx;
   border-bottom: 2rpx solid #ccc;
 }
 
 .input{
+  position:absolute;
+  right: 50rpx;
   border: 2rpx solid #aaa;
   border-radius: 20rpx; 
   margin: 10rpx;

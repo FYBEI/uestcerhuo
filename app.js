@@ -1,7 +1,7 @@
 //app.js
 App({
   data:{
-    serurl: '192.168.31.202:8080/secondarytrading/commodity/listcommodity'
+    
   },
 
   onLaunch: function () {
@@ -11,10 +11,29 @@ App({
     wx.setStorageSync('logs', logs)
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      success: function (res) {
+        var code = res.code;
+        if (code) {
+          console.log('获取用户登录凭证：' + code);
+          // --------- 发送凭证 ------------------
+          wx.request({
+            url: '',
+            data: { code: code },
+            success: function (res) {
+              console.log(res.data)
+              wx.setStorage({
+                key: 'openid',
+                data: res.data.openid,
+              })
+
+            }
+          })
+          // ------------------------------------
+        } else {
+          console.log('获取用户登录态失败：' + res.errMsg);
+        }
       }
-    })
+    });
     // 获取用户信息
     wx.getSetting({
       success: res => {

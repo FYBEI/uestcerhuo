@@ -2,6 +2,7 @@ var app = getApp()
 
 Page({
   data: {
+    commoInfo: {},
     tempFilePaths: [],
     tempFilenum: 0,
     maxNum: 3,
@@ -9,7 +10,10 @@ Page({
   },
 
   onLoad: function(options){
-    
+    var commoInfo = options
+    this.setData({
+      commoInfo: commoInfo
+    })
   },
 
   //打开相册，上传图片
@@ -62,12 +66,66 @@ Page({
         title: '请添加图片',
       })
     }else{
-      this.pub();
+      if (this.pubCommoInfo() & this.pubImage())
+        wx.showToast({
+          title: '发布成功',
+          success:()=>{
+            wx.redirectTo({
+              url: 'pubcommodity',
+            })
+          }
+        })
+      else
+        wx.showToast({
+          title: '发布失败',
+          icon: 'cancel'
+        })
     }
   },
 
-  pub: function(){
-    console.log("上传商品数据")
+  pubCommoInfo: function(){
+    wx.request({
+      url: '',
+      data: {
+        commoInfo: this.data.commoInfo
+      },
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        if(res.data == "false")
+          return false
+        else
+          return true
+      },
+      fail: function (res) {
+        return false
+      },
+      complete: function (res) { }
+    })
+  },
+
+  pubImage: function(){
+    const tempFilePaths = this.data.tempFilePaths
+    var num = this.data.tempFilenum
+    var commoInfo = this.data.commoInfo
+    for(var i = 0; i < num; i++){
+      wx.uploadFile({
+        url: '',
+        filePath: tempFilePaths[i],
+        name: commoInfo.name,
+        success:(res) =>{
+          if(res.data === "false")
+            return false
+          else
+            return true
+        },
+        fail(res){
+          return false
+        }
+      })
+    }
+   
   }
   
 })

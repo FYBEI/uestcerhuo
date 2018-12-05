@@ -12,9 +12,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var commoInfo = JSON.parse(options.commoInfo)
-    this.setData({
-      commoInfo: commoInfo
+    var commoId = options.commoId
+    this.getCommoInfo(commoId)
+  },
+
+  getCommoInfo: function (commoId) {
+    wx.request({
+      url: '',
+      data: {
+        commoId: commoId
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        this.setData({
+          commoInfo: res.data.commoInfo
+        })
+      },
+      fail: function (res) {
+        console.log("fail")
+      },
+      complete: function (res) { }
     })
   },
 

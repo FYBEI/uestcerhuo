@@ -30,7 +30,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getCommo()
+  },
+
+  getCommo :function(){
+    wx.request({
+      url: '',
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        console.log(res.data)
+        this.setData({
+          commo1: res.data.commo1,
+          commo2: res.data.commo2
+        })
+      },
+      fail: function (res) {
+        console.log("失败了")
+      },
+      complete: function (res) { }
+    })
   },
 
   /**
@@ -89,20 +109,19 @@ Page({
   },
 
   enterContent: function(e){
-    var that = this
     var index = e.currentTarget.dataset.index
-    var arr = JSON.stringify(that.data.commo1[index])
+    var id = this.data.commo1[index].Id
     
     wx.navigateTo({
-      url: `changeCommoInfo/changeCommoInfo?commoInfo=${arr}`,
+      url: `changeCommoInfo/changeCommoInfo?Id=`+id,
     })
   },
 
   enterContent2: function(e){
     var index = e.currentTarget.dataset.index
-    var arr = JSON.stringify(this.data.commo2[index])
+    var id = this.data.commo2[index].Id
     wx.navigateTo({
-      url: `soldCommo/soldCommo?commoInfo=${arr}`,
+      url: `soldCommo/soldCommo?Id=`+id,
     })
   },
 
@@ -116,7 +135,35 @@ Page({
       success: function (res) {
         if (res.confirm) {
           console.log('点击确定了');
-          commo.splice(index, 1);
+          wx.request({
+            url: '',
+            data: {
+              commoId: commo[index].Id
+            },
+            method: 'POST',
+            dataType: 'json',
+            responseType: 'text',
+            success: (res) => {
+              if(res.data){
+                wx.showToast({
+                  title: '删除成功',
+                })
+                commo.splice(index, 1);
+              }else{
+                wx.showToast({
+                  title: '删除失败',
+                })
+              }
+            },
+            fail: function (res) {
+              wx.showToast({
+                title: '删除失败',
+              })
+            },
+            complete: function (res) { }
+          })
+          
+          
         } else if (res.cancel) {
           console.log('点击取消了');
           return false;
@@ -142,9 +189,35 @@ Page({
       success: function (res) {
         if (res.confirm) {
           console.log('点击确定了');
-          commo2.push(commo);
-          commo1.splice(index, 1);
-          console.log(commo2);
+          wx.request({
+            url: '',
+            data: {
+              commoId: commo1[index].Id
+            },
+            method: 'POST',
+            dataType: 'json',
+            responseType: 'text',
+            success: (res) => {
+              if(res.data){
+                wx.showToast({
+                  title: '删除成功',
+                })
+                commo2.push(commo);
+                commo1.splice(index, 1);
+              }else{
+                wx.showToast({
+                  title: '删除失败',
+                })
+              }
+              
+            },
+            fail: function (res) {
+              wx.showToast({
+                title: '删除失败',
+              })
+            },
+            complete: function (res) { }
+          })
         } else if (res.cancel) {
           console.log('点击取消了');
           return false;
