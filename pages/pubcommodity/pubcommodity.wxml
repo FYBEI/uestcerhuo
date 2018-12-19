@@ -23,10 +23,6 @@
       </picker>
     </view>
     <view class='commodityinput'>
-      <view>商品数量：</view>
-      <input placeholder='{{place[classindex].num}}' placeholder-class='placeclass' bindinput='enternum'></input>
-    </view>
-    <view class='commodityinput'>
       <view>商品原价￥：</view>
       <input placeholder='{{place[classindex].price}}' placeholder-class='placeclass' bindinput='enteroprice'></input>
     </view>

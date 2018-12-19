@@ -10,10 +10,10 @@
   <view class='list'>
     <view wx:for="{{commodities}}" wx:for-item="commodity" data-index='{{index}}' bindtap='enterContent'>
       <view class="classview">
-        <image src='{{commodity.photo}}' class='classimage' mode='scaleToFill'></image>
+        <image src='{{commodity.imgs[0].filename}}' class='classimage' mode='scaleToFill'></image>
         <view class='intro'>
-          <text class='classtext name'>{{commodity.name}}</text>
-          <text class='classtext price'>{{commodity.price}}</text>
+          <text class='classtext name'>{{commodity.goodsName}}</text>
+          <text class='classtext price'>{{commodity.estimateprice}}</text>
         </view>
         <span class='iconfont icon-xiayibu iconclass'></span>
       </view>  

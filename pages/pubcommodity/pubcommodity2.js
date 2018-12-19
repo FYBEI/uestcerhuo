@@ -6,13 +6,24 @@ Page({
     tempFilePaths: [],
     tempFilenum: 0,
     maxNum: 3,
+    goodsName: '',
+    stdId: 2333,
+    estimatePrice: 0,
+    category: '',
+    specialDemage: '',
+    goodsId: 1,
+    goodsCondition: '',
     des: ["1，一次可以上传1~3张图片。", "2，长按可以删除图片。", "3，图片尽量清晰明亮。", "4，图片应当符合描述", "发布后请耐心等待审核"],
   },
 
   onLoad: function(options){
-    var commoInfo = options
+    console.log(options)
     this.setData({
-      commoInfo: commoInfo
+      goodsName: options.name,
+      estimatePrice: options.price,
+      category: options.classify,
+      specialDemage: options.specialbroke,
+      goodsCondition: options.level
     })
   },
 
@@ -66,7 +77,9 @@ Page({
         title: '请添加图片',
       })
     }else{
-      if (this.pubCommoInfo() & this.pubImage())
+      var result1 = this.pubCommoInfo()
+      var result2 = this.pubImage()
+      if (result1 & result2){
         wx.showToast({
           title: '发布成功',
           success:()=>{
@@ -75,28 +88,32 @@ Page({
             })
           }
         })
-      else
+      }else{
         wx.showToast({
           title: '发布失败',
           icon: 'cancel'
         })
+      }
     }
   },
 
   pubCommoInfo: function(){
     wx.request({
-      url: '',
+      url: 'https://www.lxfengch.xyz/commodity/addcommodity',
       data: {
-        commoInfo: this.data.commoInfo
+        stdId: this.data.stdId,
+        goodsName: this.data.goodsName,
+        estimatePrice: this.data.estimatePrice,
+        goodsCondition: this.data.goodsCondition,
+        specialDemage: this.data.specialDemage,
+        category: this.data.category
       },
       method: 'POST',
       dataType: 'json',
       responseType: 'text',
       success: (res) => {
-        if(res.data == "false")
-          return false
-        else
-          return true
+        console.log(res.data)
+        return true
       },
       fail: function (res) {
         return false
@@ -108,17 +125,16 @@ Page({
   pubImage: function(){
     const tempFilePaths = this.data.tempFilePaths
     var num = this.data.tempFilenum
-    var commoInfo = this.data.commoInfo
     for(var i = 0; i < num; i++){
       wx.uploadFile({
-        url: '',
+        url: 'https://www.lxfengch.xyz/images/upload',
         filePath: tempFilePaths[i],
-        name: commoInfo.name,
+        name: "image",
         success:(res) =>{
-          if(res.data === "false")
-            return false
-          else
+          if(res.data)
             return true
+          else
+            return false
         },
         fail(res){
           return false

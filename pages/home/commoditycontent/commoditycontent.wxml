@@ -2,9 +2,9 @@
 <view>
   <view>
     <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
-      <block wx:for="{{movies}}" wx:for-index="index">  
+      <block wx:for="{{commodity[0].imgs}}" wx:for-index="index">  
         <swiper-item>  
-          <image src="{{item.url}}" class="swiper-image" mode="aspectFill"/>  
+          <image src="{{item.filename}}" class="swiper-image" mode="aspectFill"/>  
         </swiper-item>  
       </block>  
     </swiper>
@@ -13,10 +13,9 @@
   <view>
     <view class='title'>
       <view class='npn'>
-        <text class='name'>{{commodity.name}}</text>
+        <text class='name'>{{commodity[0].goodsName}}</text>
         <view class='pn'>
-          <text class='pntext ptext'>￥{{commodity.price}}</text>
-          <text class='pntext ntext'>数量：{{commodity.num}}</text>
+          <text class='pntext ptext'>￥{{commodity[0].estimatePrice}}</text>
         </view>
       </view>
       <view class='iconview'>
@@ -55,10 +54,10 @@
       </view>
       <view class='brokeview'>
         <text class='broke'>磨损情况：</text>
-        <text class='broke' decode="true">&nbsp;&nbsp;&nbsp;&nbsp;{{commodity.broke}}</text>
+        <text class='broke' decode="true">&nbsp;&nbsp;&nbsp;&nbsp;{{commodity[0].specialDemage}}</text>
       </view>
       <view style='margin:15rpx;padding:15rpx;'>
-        <text class='level'>新旧程度：{{commodity.level}}成新</text>
+        <text class='level'>新旧程度：{{commodity[0].goodsCondition}}成新</text>
       </view>
     </view>
   </view>

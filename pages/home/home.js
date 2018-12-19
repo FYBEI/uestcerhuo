@@ -41,10 +41,11 @@ Page({
   //进入商品详细页面，传输商品id
   enterContent: function(e){
     var index = e.currentTarget.dataset.index
-    var commoId = this.data.commodities[index].id
+    console.log(index)
+    var commoId = this.data.commodities[index].goodsId
     console.log(commoId)
     wx.navigateTo({
-      url: 'commoditycontent/commoditycontent?commoId='+commoId,
+      url: 'commoditycontent/commoditycontent?commoId=' + commoId,
     })
   },
 

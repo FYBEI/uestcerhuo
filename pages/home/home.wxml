@@ -18,7 +18,7 @@
   <view class='list'>
     <view wx:for="{{commodities}}" wx:for-item="commodity" data-index='{{index}}' bindtap='enterContent'>
       <view class="classview">
-        <image src='{{commodity.goodsImg}}' class='classimage' mode='scaleToFill'></image>
+        <image src='{{commodity.imgs[0].filename}}' class='classimage' mode='scaleToFill'></image>
         <view class='intro'>
           <text class='classtext name'>{{commodity.goodsName}}</text>
           <text class='classtext price'>￥{{commodity.estimatePrice}}</text>
@@ -28,6 +28,4 @@
     </view>
   </view>
 </view>
-
-
 

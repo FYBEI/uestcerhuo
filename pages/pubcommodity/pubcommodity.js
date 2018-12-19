@@ -18,10 +18,9 @@ Page({
                 { name: '李宁球鞋', broke: '穿过一两次', num: '1', price: '50'}],
     levelarr: ['九','八','七','六','五','四','三'],
     name: '商品名',
-    classify: '',
+    classify: '二手书',
     specialbroke: '磨损情况',
-    level: '',
-    num: 1,
+    level: '九',
     oprice: 0,
     price: 0
   },
@@ -110,14 +109,7 @@ Page({
   enterbroke: function(e){
     var broke = e.detail.value
     this.setData({
-      broke: broke
-    })
-  },
-
-  enternum: function(e){
-    var num = e.detail.value
-    this.setData({
-      num: num
+      specialbroke: broke
     })
   },
 
@@ -161,7 +153,7 @@ Page({
 
   next: function(){
       wx.navigateTo({
-        url: 'pubcommodity2?name='+this.data.name+'&classify='+this.data.classify+'&specialbroke='+this.data.specialbroke+'&level='+this.data.level+'&num='+this.data.num+'&price='+this.data.price,
+        url: 'pubcommodity2?name=' + this.data.name + '&classify=' + this.data.classify + '&specialbroke=' + this.data.specialbroke + '&level=' + this.data.level + '&price=' + this.data.price,
       })
   }
 

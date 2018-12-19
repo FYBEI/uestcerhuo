@@ -2,13 +2,7 @@ var app = getApp()
 
 Page({
   data: {
-    movies: [
-      { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
-      { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
-    ],
-    commodity: { name: '微积分上(人教版)', price: 10, num: 3, broke: '无破损，略旧.请你们的产品经理吃顿饭，好好了解一下吧；如果有工厂的话，去看看绝对比坐在办公室脑补自嗨强得多。', level: '八'},
+    commodity: {},
     owner: {pic: '/images/myself/head.gif', name: '王二狗', description: '666', pubed: 1, sold: 1, weinum: '123'},
     index: 0,
   },
@@ -16,9 +10,9 @@ Page({
   //获得商品详细信息
   getCommo: function (commoId) {
     wx.request({
-      url: '',
+      url: 'https://www.lxfengch.xyz/commodity/listcommoditydetails',
       data: {
-        commoId: commoId
+        goodsId: commoId
       },
       method: 'GET',
       dataType: 'json',
@@ -26,8 +20,9 @@ Page({
       success: (res) => {
         console.log(res.data),
           this.setData({
-            commodity: res.data.commodity
+            commodity: res.data.commodityDetails
           })
+        console.log(this.data.commodity)
       },
       fail: function (res) {
         console.log("失败了")
@@ -39,8 +34,8 @@ Page({
   //获得前一个页面传来的商品id，并且请求商品详细信息
   onLoad: function (options) {
     var commoId = options.commoId
-    var url = app.globalData.serurl
-    this.getCommo(url, commoId)
+    this.getCommo( commoId)
+    
   },
 
   onShow: function(){
